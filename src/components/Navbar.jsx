@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <nav>
       <span className="newsspan">
@@ -9,4 +9,3 @@ const NavBar = () => {
     </nav>
   );
 };
-export default NavBar;
