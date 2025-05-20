@@ -1,11 +1,19 @@
 import "./App.css";
+import { Routes, Route } from "react-router";
+import { NavBar } from "./components/Navbar";
+import { WelcomePage } from "./components/WelcomePage";
+import { Articles } from "./components/Articles";
 
 function App() {
   return (
     <>
-      <h1>
-        <WelcomePage />
-      </h1>
+      <main>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<WelcomePage />}></Route>
+          <Route path="/articles" element={<Articles />}></Route>
+        </Routes>
+      </main>
     </>
   );
 }

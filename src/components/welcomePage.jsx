@@ -1,11 +1,10 @@
 import "../App.css";
 
-const WelcomePage = () => {
+export const WelcomePage = () => {
   return (
-    <>
-      <h2>Welcome to NC News</h2>
-    </>
+    <div>
+      <h1>Welcome to NC News</h1>
+      <Footer />
+    </div>
   );
 };
-
-export default WelcomePage;
