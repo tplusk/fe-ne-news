@@ -1,3 +1,3 @@
 export const Footer = () => {
-  return <h6>All rights reserved to NC News</h6>;
+  return <h6>All rights reserved to NC News, 2025</h6>;
 };
