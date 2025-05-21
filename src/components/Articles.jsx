@@ -1,34 +1,38 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../api";
+import "./Articles.css";
+import { NavBar } from "./Navbar";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(false);
+  const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     getArticles()
       .then((articles) => {
-        setArticles(artciles);
+        setArticles(articles);
       })
-      .catch((error) => {
-        setError(true);
+      .catch((err) => {
+        setErr(true);
       })
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Uhhh, ohhh...! Something went wrong!</p>;
+  if (err) return <p>Uhhh, ohhh...! Something went wrong!</p>;
 
   return (
     <section>
-      <h2>Articles</h2>
+      <h1>Articles</h1>
       <ul>
         {articles.map((article) => {
-          return <li key={`article-${article.article_name}`}></li>;
+          return <li key={article.article_id}>{article.title}</li>;
         })}
       </ul>
+      <br></br>
+      <NavBar />
     </section>
   );
 };
