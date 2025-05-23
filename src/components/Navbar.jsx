@@ -4,10 +4,13 @@ export const NavBar = () => {
   return (
     <nav>
       <span className="newsspan">
-        <Link to="/">Home Page | </Link>
+        <Link to="/">Home | </Link>
       </span>
       <span className="newsspan">
-        <Link to="/articles">Articles </Link>
+        <Link to="/articles">Articles | </Link>
+      </span>
+      <span className="newsspan">
+        <Link to="/topics">Topics</Link>
       </span>
     </nav>
   );

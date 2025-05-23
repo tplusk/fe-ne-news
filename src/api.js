@@ -11,6 +11,28 @@ export const getArticles = () => {
       return data.articles;
     })
     .catch((err) => {
-      return err;
+      throw err;
+    });
+};
+
+export const getTopics = () => {
+  return ncNewsApi
+    .get("/topics")
+    .then(({ data }) => {
+      return data.topics;
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const getArticleById = (article_id) => {
+  return ncNewsApi
+    .get("/articles/:article_id")
+    .then(({ data }) => {
+      return data.article.body;
+    })
+    .catch((err) => {
+      throw err;
     });
 };
