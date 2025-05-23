@@ -7,17 +7,17 @@ export const Layout = () => {
       <div>
         <img id="newsGlobe" src={image} alt="News Globe Logo" />
       </div>
-      <div>
-        <br></br>
-      </div>
       <nav>
         <menu>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/articles">Articles</Link>
-          </li>
+          <span>
+            <Link to="/">Home |</Link>
+          </span>
+          <span>
+            <Link to="/articles"> Articles |</Link>
+          </span>
+          <span>
+            <Link to="/topics"> Topics</Link>
+          </span>
         </menu>
       </nav>
 

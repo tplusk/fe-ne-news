@@ -7,7 +7,10 @@ export const NavBar = () => {
         <Link to="/">Home | </Link>
       </span>
       <span className="newsspan">
-        <Link to="/articles">Articles </Link>
+        <Link to="/articles">Articles | </Link>
+      </span>
+      <span className="newsspan">
+        <Link to="/topics">Topics</Link>
       </span>
     </nav>
   );

@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { getArticles } from "../api";
-import "./Articles.css";
+import { getTopics } from "../api";
 import { NavBar } from "./Navbar";
 
-export const Articles = () => {
-  const [articles, setArticles] = useState([]);
+export const Topics = () => {
+  const [topics, setTopics] = useState([]);
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    getArticles()
-      .then((articles) => {
-        setArticles(articles);
+    getTopics()
+      .then((topics) => {
+        setTopics(topics);
       })
       .catch((err) => {
         setErr(true);
@@ -24,19 +23,15 @@ export const Articles = () => {
   if (err) return <p>Uhhh, ohhh...! Something went wrong!</p>;
 
   return (
-    <section>
+    <>
+      <br></br>
       <ul>
-        {articles.map((article) => {
-          return (
-            <ul key={article.article_id}>
-              {article.title}{" "}
-              <p>related comments &#8594; {article.article_id}</p>
-            </ul>
-          );
+        {topics.map((topic) => {
+          return <menu key={topic}>{topic.slug}</menu>;
         })}
       </ul>
       <br></br>
       <NavBar />
-    </section>
+    </>
   );
 };
